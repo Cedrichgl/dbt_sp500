@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: sp500_raw
+    database: SP_500
+    schema: DATAFEEDS
+    tables:
+      - name: SP_500

@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: stg_sp500_traffic
+    description: "Staging model pour le trafic web des entreprises du S&P 500. Nettoie et caste les colonnes de la source brute."
+    columns:
+      - name: company_name
+        description: "Nom de l'entreprise"
+        tests:
+          - not_null
+
+      - name: ticker
+        description: "Symbole boursier de l'entreprise"
+        tests:
+          - not_null
+
+      - name: date
+        description: "Date de la mesure"
+        tests:
+          - not_null
+
+      - name: country
+        description: "Pays d'origine du trafic"
+        tests:
+          - not_null
+
+      - name: total_visits
+        description: "Nombre total de visites"
+        tests:
+          - not_null

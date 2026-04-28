@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: mart_traffic_by_company
+    description: "Agrégation du trafic web total par entreprise, toutes dates confondues."
+    columns:
+      - name: ticker
+        description: "Symbole boursier — identifiant unique de l'entreprise"
+        tests:
+          - not_null
+          - unique
+
+  - name: mart_device_comparison
+    description: "Comparaison desktop vs mobile par entreprise avec parts en pourcentage."
+    columns:
+      - name: ticker
+        description: "Symbole boursier — identifiant unique de l'entreprise"
+        tests:
+          - not_null
+          - unique
+
+  - name: mart_traffic_over_time
+    description: "Évolution du trafic web par entreprise et par date."
+    columns:
+      - name: date
+        description: "Date de la mesure"
+        tests:
+          - not_null
+      - name: ticker
+        description: "Symbole boursier"
+        tests:
+          - not_null
